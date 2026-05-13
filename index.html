@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>NexusAI | AI-Driven RWA Lending Protocol — Global Private Sale Officially Launched</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * { margin:0; padding:0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f9fafc;
+            color: #0a2540;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+        .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+        section { padding: 70px 0; border-bottom: 1px solid #e6edf4; }
+        .gradient-text {
+            background: linear-gradient(135deg, #1e40af, #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #2563eb, #6d28d9);
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 12px 32px;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-block;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37,99,235,0.2);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,99,235,0.3);}
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #2563eb;
+            color: #2563eb;
+            padding: 10px 26px;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: 0.2s;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .btn-outline:hover { background: rgba(37,99,235,0.08); border-color: #6d28d9; color:#6d28d9;}
+        .card {
+            background: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.02), 0 0 0 1px #eef2ff;
+            padding: 28px 24px;
+            transition: all 0.2s;
+            height: 100%;
+            cursor: pointer;
+        }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);}
+        .team-card-img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 1rem;
+            margin-bottom: 16px;
+        }
+        .card,
+        .clickable-card,
+        .partner-logo,
+        .faq-toggle-btn {
+            -webkit-tap-highlight-color: transparent;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+        .card:active,
+        .clickable-card:active,
+        .partner-logo:active {
+            background-color: white;
+            transform: translateY(-2px);
+        }
+        .img-container {
+            background: #f1f5f9;
+            border-radius: 1.2rem;
+            border: 1px dashed #94a3b8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            width: 100%;
+        }
+        .img-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 1.2rem;
+        }
+        .img-placeholder-text {
+            background: #f1f5f9;
+            border-radius: 1.2rem;
+            border: 1px dashed #94a3b8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 2rem;
+            text-align: center;
+            color: #475569;
+            gap: 8px;
+        }
+        .carousel-container {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+        .carousel-slides {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 16px;
+            padding-bottom: 16px;
+            scrollbar-width: thin;
+        }
+        .carousel-slides img {
+            scroll-snap-align: start;
+            width: 100%;
+            flex-shrink: 0;
+            border-radius: 1.2rem;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: white;
+            border: none;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            font-weight: bold;
+            z-index: 2;
+        }
+        .carousel-btn-left { left: 10px; }
+        .carousel-btn-right { right: 10px; }
+        .partner-logo {
+            background: white;
+            border-radius: 60px;
+            padding: 8px 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .partner-logo:hover { transform: translateY(-2px); background: #f1f5f9; }
+        .table-wrapper { overflow-x: auto; background: white; border-radius: 1.2rem; border: 1px solid #e2e8f0; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+        th, td { padding: 14px 12px; text-align: center; border-bottom: 1px solid #eef2ff; }
+        th { background: #f8fafc; font-weight: 700; color:#1e293b; }
+        details { background: #ffffff; border-radius: 1rem; margin-bottom: 12px; padding: 12px 20px; border: 1px solid #e2e8f0; }
+        summary { font-weight: 700; cursor: pointer; color: #1e40af; }
+        .stat-number { font-size: 2rem; font-weight: 800; background: linear-gradient(135deg,#1e40af,#7c3aed); -webkit-background-clip:text; background-clip:text; color:transparent; }
+        footer { background: #0f172a; color: #cbd5e1; padding: 48px 0; margin-top: 40px; }
+        @media (max-width: 760px) { section { padding: 50px 0; } .container { padding: 0 20px; } }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            backdrop-filter: blur(5px);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background-color: white;
+            margin: auto;
+            padding: 0;
+            border-radius: 2rem;
+            width: 90%;
+            max-width: 600px;
+            max-height: 85vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.25);
+            animation: fadeInUp 0.3s ease;
+        }
+        @media (min-width: 768px) {
+            .modal-content {
+                width: 60%;
+                max-width: 60%;
+                max-height: 60vh;
+            }
+        }
+        .modal-header {
+            padding: 20px 24px 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #eef2ff;
+        }
+        .modal-header h3 { font-size: 1.5rem; }
+        .modal-close {
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #94a3b8;
+            transition: 0.2s;
+        }
+        .modal-close:hover { color: #1e40af; }
+        .modal-body {
+            padding: 24px;
+        }
+        .modal-body img {
+            width: 100%;
+            border-radius: 1rem;
+            margin-bottom: 16px;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .clickable-card { cursor: pointer; }
+        .partner-logo { cursor: pointer; }
+        .faq-toggle-btn {
+            background: linear-gradient(135deg, #2563eb, #6d28d9);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.2s;
+            margin-bottom: 24px;
+        }
+        .faq-toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37,99,235,0.3);
+        }
+        .faq-content { display: none; }
+        .faq-content.show { display: block; }
+    </style>
+</head>
+<body>
+<nav style="position: sticky; top:0; z-index: 100; background: rgba(255,255,255,0.96); backdrop-filter: blur(12px); border-bottom: 1px solid #e2e8f0;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 24px; flex-wrap: wrap; gap: 16px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+            <img src="images/logo/nexusai-logo.png" alt="NexusAI Logo" style="height: 40px; width: auto;">
+            <span class="gradient-text" style="font-size: 1.6rem; font-weight: 800;">NexusAI</span>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 24px; font-weight: 500;">
+            <a href="#problem" style="color:#1e293b; text-decoration:none;">Narrative</a>
+            <a href="#tech" style="color:#1e293b; text-decoration:none;">Technology</a>
+            <a href="#tokenomics" style="color:#1e293b; text-decoration:none;">Tokenomics</a>
+            <a href="#team" style="color:#1e293b; text-decoration:none;">Team</a>
+            <a href="#rwa" style="color:#1e293b; text-decoration:none;">RWA Track</a>
+            <a href="#private" style="color:#1e293b; text-decoration:none;">Private Sale</a>
+            <a href="#faq" style="color:#1e293b; text-decoration:none;">FAQ</a>
+        </div>
+        <a href="https://nexaira.com" target="_blank" class="btn-primary" style="padding: 8px 24px;">Join Private Sale</a>
+    </div>
+</nav>
+
+<main>
+    <section style="padding-top: 60px; background: linear-gradient(135deg,#f5f9ff, white);">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; gap: 48px; align-items: center;">
+                <div style="flex:1.2;">
+                    <div style="background:#e0e7ff; display:inline-block; padding:6px 18px; border-radius:40px; font-weight:600;">🚀 Global Private Sale Officially Launched</div>
+                    <h1 style="font-size: 3rem; font-weight: 800; margin: 24px 0 16px;">NexusAI <span class="gradient-text">AI + RWA</span><br>Start Your Journey with 20U</h1>
+                    <p style="font-size:1.1rem; color:#334155;">Hard to get traditional offline loans? On-chain DeFi too complex? NexusAI uses AI to bridge: 70% on-chain intelligent allocation + 30% real-world loans, earning 8%-15% annual yield.</p>
+                    <div style="display: flex; gap: 20px; margin: 32px 0;">
+                        <a href="#private" class="btn-primary">Join Now</a>
+                        <a href="#problem" class="btn-outline">Deep Dive</a>
+                    </div>
+                    <div style="display: flex; flex-wrap: wrap; gap: 32px;"><div><span class="stat-number">30M $</span><br>Soft Cap</div><div><span class="stat-number">100M $</span><br>Hard Cap</div><div><span class="stat-number">0.10$</span><br>Private Price</div><div><span class="stat-number">20U</span><br>Minimum Entry</div></div>
+                </div>
+                <div style="flex:0.9;">
+                    <div class="img-container">
+                        <img src="images/single/hero-vision.jpg" alt="NexusAI Hero Visual">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="problem">
+        <div class="container">
+            <h2 class="gradient-text" style="font-size:2rem;">🌍 What Problem Are We Solving?</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 32px; margin-top: 32px;">
+                <div class="card" style="flex:1;"><i class="fas fa-chart-line" style="font-size:2rem; color:#2563eb;"></i><h3>Structural Mismatch</h3><p>Hundreds of billions of dollars in DeFi circulate internally, deposit rates drop below 2%; trillions of dollars in offline SME financing demand willing to pay 8%-15% interest, but cannot access.</p></div>
+                <div class="card" style="flex:1;"><i class="fas fa-lock" style="font-size:2rem; color:#6d28d9;"></i><h3>Over-collateralization Barrier</h3><p>Traditional DeFi requires 150%+ collateral ratio, excluding 99% of real borrowers. NexusAI's AI credit engine breaks the limit.</p></div>
+                <div style="flex:0.8;">
+                    <div class="img-container">
+                        <img src="images/single/bridge.jpg" alt="Bridge between Crypto and Real World">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech" style="background:#f8fafc;">
+        <div class="container">
+            <h2 class="gradient-text" style="font-size:2rem; text-align:center;">⚙️ NexusAI Three Core Technologies</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 32px; margin-top: 48px;">
+                <div class="card clickable-card" data-modal="modal-tech1"><i class="fas fa-brain" style="font-size:2rem;"></i><h3>AI Credit Engine</h3><p>Graph neural network on-chain behavior analysis + zero-knowledge proof off-chain credit bridging, dynamic credit scoring, enabling partial uncollateralized lending.</p></div>
+                <div class="card clickable-card" data-modal="modal-tech2"><i class="fas fa-handshake" style="font-size:2rem;"></i><h3>Hybrid Asset Model</h3><p>70% on-chain AI optimized interest rate allocation + 30% compliant RWA bridging (SME loans/supply chain finance), earning 8%-15% spread.</p></div>
+                <div class="card clickable-card" data-modal="modal-tech3"><i class="fas fa-lock-open" style="font-size:2rem;"></i><h3>Dual-Trigger Unlock Mechanism</h3><p>TVL reaches $30M or 6 months (whichever comes first) → then 12-month linear release, aligning interests with long-term growth.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tokenomics">
+        <div class="container">
+            <h2 class="gradient-text">📊 Tokenomics</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Parameter</th><th>Value</th></tr></thead>
+                    <tbody>
+                        <tr><td>NEX Private Price</td><td>$0.10 / NEX</td></tr>
+                        <tr><td>Soft Cap Target</td><td>$30M (3B NEX)</td></tr>
+                        <tr><td>Hard Cap Target</td><td>$100M (10B NEX)</td></tr>
+                        <tr><td>Total Supply</td><td>30B NEX (to be determined after fundraising)</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card" style="margin-top: 24px;"><h3>🔓 Dual-Trigger Linear Release Mechanism</h3><p>Traditional time-based unlocking often leads to "dump at launch". NexusAI ties unlocking to TVL growth: TVL reaches $30M or 6 months after TGE (whichever comes first), then linear release over 12 months. Team and early investors are fully aligned.</p>
+            <div class="img-container" style="margin-top:20px;">
+                <img src="images/single/unlock-curve.jpg" alt="Unlock Curve Comparison" 
+                     onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\"img-placeholder-text\"><i class=\"fas fa-chart-line\"></i> Unlock Curve Comparison (Standard vs Dual-Trigger)</div>'">
+            </div>
+        </div>
+    </section>
+
+    <section id="team" style="background:#fcfdff;">
+        <div class="container">
+            <h2 class="gradient-text" style="text-align:center;">👥 Core Team</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 28px; margin-top: 40px;">
+                <div class="card clickable-card" data-modal="modal-team1">
+                    <img class="team-card-img" src="images/single/TarunChitra.jpg" alt="Tarun Chitra">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Tarun Chitra</h3>
+                    <p>Project Lead, former quantitative researcher at Pantera Capital, core contributor to Compound, expert in blockchain simulation and risk modeling.</p>
+                </div>
+                <div class="card clickable-card" data-modal="modal-team2">
+                    <img class="team-card-img" src="images/single/DavidPark.jpg" alt="David Park">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>David Park</h3>
+                    <p>CTO, former senior engineer at Meta Novi Wallet, core developer of Solana lending protocol, designed liquidation bot reducing bad debt by 90%.</p>
+                </div>
+                <div class="card clickable-card" data-modal="modal-team3">
+                    <img class="team-card-img" src="images/single/ElenaVasiliev.jpg" alt="Elena Vasiliev">
+                    <i class="fas fa-chart-network"></i>
+                    <h3>Elena Vasiliev</h3>
+                    <p>COO, former institutional DeFi gateway designer at J.P. Morgan Onyx, Binance Europe business director, led listing of 20+ RWA projects.</p>
+                </div>
+            </div>
+            <div class="carousel-container" style="margin-top: 32px;">
+                <div class="carousel-slides" id="teamCarousel">
+                    <img src="images/carousel-team/team-1.jpg" alt="Team 1">
+                    <img src="images/carousel-team/team-2.jpg" alt="Team 2">
+                    <img src="images/carousel-team/team-3.jpg" alt="Team 3">
+                </div>
+                <button class="carousel-btn carousel-btn-left" onclick="document.getElementById('teamCarousel').scrollBy({left: -400, behavior:'smooth'})">◀</button>
+                <button class="carousel-btn carousel-btn-right" onclick="document.getElementById('teamCarousel').scrollBy({left: 400, behavior:'smooth'})">▶</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="rwa">
+        <div class="container">
+            <h2 class="gradient-text">📈 Why is RWA+AI a Deterministic Super Narrative?</h2>
+            <div class="card"><h3>What is RWA?</h3><p>RWA (Real-World Asset tokenization) brings off-chain assets such as real estate, bonds, and receivables on-chain, unlocking a potential market of $30 trillion. J.P. Morgan Kinexys, BlackRock BUIDL fund ($2.9B) have fully deployed. Hong Kong released Digital Asset Declaration 2.0, making RWA a key direction.</p>
+            <div class="img-container" style="margin-top:12px;"><img src="images/single/rwa-chart.jpg" alt="RWA Market Growth Curve"></div></div>
+            <div class="card" style="margin-top:24px;"><h3>DeFi Economic Landscape & Four Major Drawbacks of Lending Market</h3><ul><li>❌ Institutional capital accounts for only 11.5% of DeFi TVL, a huge gap</li><li>❌ Liquidity congestion: Over 60% of Aave deposits sit idle, deposit rates drop below 2%</li><li>❌ High liquidation risk, borrowers suffer heavy losses</li><li>❌ RWA double-edged sword: lack of transparent credit assessment</li></ul><p>NexusAI's AI credit engine + hybrid asset model precisely solves the above pain points, paving the way for institutional entry.</p></div>
+            <div class="card" style="margin-top:24px;"><h3>Wall Street Enters En Masse + AI Credit Revolution</h3><p>BlackRock, J.P. Morgan, Goldman Sachs, Franklin Templeton have all launched tokenized products. Creditlink AI credit score raised over $60M in 4 hours. Chainlink launched AI agent reputation system. NexusAI positions at the best intersection of AI+RWA.</p></div>
+        </div>
+    </section>
+
+    <section id="private">
+        <div class="container">
+            <h2 class="gradient-text">👑 Private Sale Details · Titles & Privileges</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead><tr><th>Investment (USDT)</th><th>Title</th><th>Direct Referral USDT</th><th>Indirect Referral Reward USDT</th><th>Direct Referral NEX</th></tr></thead>
+                    <tbody>
+                        <tr><td>20–99</td><td>🕵️ Observer</td><td>40%</td><td>—</td><td>0%</td></tr>
+                        <tr><td>100–299</td><td>🔗 Liaison</td><td>60%</td><td>—</td><td>10%</td></tr>
+                        <tr><td>300–999</td><td>🌐 Node Ambassador</td><td>60%</td><td>Level 2: 10%</td><td>10%</td></tr>
+                        <tr><td>1000–2999</td><td>🏛 Regional Councilor</td><td>60%</td><td>L2 10% + L3 5%</td><td>10%</td></tr>
+                        <tr><td>3000+</td><td>👑 Genesis Councilor</td><td>60%</td><td>L2 10% + L3 5% + L4 2%</td><td>10%</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card" style="margin: 24px 0; background:#eef2ff;"><p>🎁 Bonus Benefit: Members with 100U or more get <strong>10% token reward of NEX obtained by direct referrals</strong> (stacked with USDT).</p></div>
+            <div class="img-container"><img src="images/single/poster-bonus.jpg" alt="Token Bonus Poster"></div>
+        </div>
+    </section>
+
+    <section id="ambassador">
+        <div class="container">
+            <h2 class="gradient-text">🤝 NexusAI Pioneer Ambassador Program</h2>
+            <p>Build and share, more work more gain. We set up five levels of titles, rewards matching contributions, preventing infinite layers, token rewards aligned with TVL growth.</p>
+            <div class="card"><h3>What exhibitions have we done for the Ambassador Program?</h3><p>We participated in the 2026 Crypto Summits in New York and Singapore, and are also actively promoting offline charitable activities in the United States. In addition, each staff member has had in-depth exchanges with many well-known crypto leaders such as Richard Teng.</p></div>
+            <div class="carousel-container" style="margin-top: 32px;">
+                <div class="carousel-slides" id="communityCarousel">
+                    <img src="images/carousel-community/community-1.jpg" alt="Community Event 1">
+                    <img src="images/carousel-community/community-2.jpg" alt="Community Event 2">
+                    <img src="images/carousel-community/community-3.jpg" alt="Community Event 3">
+                    <img src="images/carousel-community/community-4.jpg" alt="Community Event 4">
+                </div>
+                <button class="carousel-btn carousel-btn-left" onclick="document.getElementById('communityCarousel').scrollBy({left: -400, behavior:'smooth'})">◀</button>
+                <button class="carousel-btn carousel-btn-right" onclick="document.getElementById('communityCarousel').scrollBy({left: 400, behavior:'smooth'})">▶</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="howto">
+        <div class="container">
+            <h2 class="gradient-text">📋 How to Join Private Sale? Four Steps</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 20px; margin: 32px 0;">
+                <div class="card"><i class="fas fa-user-plus"></i><h3>1. Register Account</h3><p>Click the link, register on official website</p></div>
+                <div class="card"><i class="fas fa-wallet"></i><h3>2. Get Internal Wallet Address</h3><p>BEP20/TRC private sale exclusive address</p></div>
+                <div class="card"><i class="fas fa-paper-plane"></i><h3>3. Transfer USDT</h3><p>Minimum 20U, keep TxID</p></div>
+                <div class="card"><i class="fas fa-crown"></i><h3>4. Enter Swap Amount</h3><p>After successful swap, invite friends to earn commissions</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="partners">
+        <div class="container">
+            <h2 class="gradient-text">🤝 Strategic Partners & Ecosystem</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; margin: 32px 0;">
+                <div class="partner-logo" data-url="https://www.binance.com/en"><i class="fab fa-bitcoin"></i> Binance Labs</div>
+                <div class="partner-logo" data-url="https://a16zcrypto.com/"><i class="fas fa-chart-line"></i> a16z Crypto</div>
+                <div class="partner-logo" data-url="https://chain.link/"><i class="fas fa-building"></i> Chainlink</div>
+                <div class="partner-logo" data-url="https://www.circle.com/"><i class="fas fa-cloud"></i> Circle</div>
+                <div class="partner-logo" data-url="https://www.blackrock.com/en"><i class="fas fa-university"></i> BlackRock</div>
+            </div>
+            <div class="card"><h3>🔥 Special Milestone: Binance DEX Beta</h3><p>In October 2026, NEX token will be listed on Binance decentralized exchange internal test. All members can search for the token and verify locked credentials via Binance Web3 wallet. This is a key step for early transparency.</p>
+            
+            <h3 style="margin-top: 40px;">📰 Latest Industry News</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap: 20px; margin-top: 20px;">
+                <div class="card clickable-card" data-modal="modal-news1"><i class="fas fa-newspaper"></i><h4>Major Crypto Exchanges To Accept BlackRock’s $2.9 Billion Tokenized Money Market Fund As Collateral</h4><p>Crypto.com and Deribit will now let savvy traders post Treasury securities-backed BUIDL tokens alongside bitcoin and stablecoins.</p></div>
+                <div class="card clickable-card" data-modal="modal-news2"><i class="fas fa-newspaper"></i><h4>The $30B RWA boom has arrived, but the real challenge is just beginning!</h4><p>Tokenized Real-World Assets (RWAs) are expanding into bonds, treasuries and other traditional assets being brought on-chain. Tokenised RWAs hit $30B!</p></div>
+                <div class="card clickable-card" data-modal="modal-news3"><i class="fas fa-newspaper"></i><h4>S&P500, stock basis trades now viable on Hyperliquid DeFi blockchain with Ondo</h4><p>Ondo Global Markets is making its tokenized stocks available on Hyperliquid, enabling basis trades between tokenized stocks and perpetual futures.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="roadmap">
+        <div class="container">
+            <h2 class="gradient-text">📅 Roadmap & Key Milestones</h2>
+            <div class="card">
+  <ul>
+    <li>🔹 2026.05 – 2026.10 Private Sale Period (Soft Cap $30M / Hard Cap $100M)</li>
+    <li>🔹 2026.10 NEX Token Listed on Binance DEX Beta</li>
+    <li>🔹 2026.12 TGE + DEX Official Trading</li>
+    <li>🔹 Trigger Condition: TVL reaches $30M or 6 months after TGE (whichever comes first) → 12-month linear unlock</li>
+    <li>🔹 2027.Q1 Full-Feature Lending Mainnet + AI Credit Engine Operational</li>
+    <li>🔹 2027.Q2–Q3  First Yield Distribution</li>
+  </ul>
+</div>
+            <div class="card"><h3>Aave's Success History & NEX Potential Forecast</h3><p>Aave evolved from ETHLend to V4, TVL over $54B, market share over 51%. Similar RWA lending protocol Maple gave early private sale participants 5x returns. NexusAI is expected to achieve 5-20x returns within 12-24 months after TGE (based on market analogy, not a promise).</p>
+            <div class="img-container"><img src="images/single/aave-chart.jpg" alt="Aave Growth Curve Comparison"></div></div>
+        </div>
+    </section>
+
+    <section id="faq">
+        <div class="container">
+            <div style="display: flex; justify-content: center;">
+                <button id="faqToggleBtn" class="faq-toggle-btn"><i class="fas fa-question-circle"></i> Frequently Asked Questions (FAQ) <i class="fas fa-chevron-down"></i></button>
+            </div>
+            <div id="faqContent" class="faq-content">
+                <details><summary>Q1: How is the security of offline assets guaranteed?</summary>We partner with licensed institutional custodians, and all offline assets are held by regulated third-party custodians. The asset value is regularly verified by compliant auditing firms and mapped onto the blockchain in tokenized form. Loan agreements and collateral documents are locked off-chain within a legal framework, essentially the same as traditional bank credit asset securitization (ABS), but with the added advantage of blockchain's transparency.</details>
+                <details><summary>Q2: How is AI risk control better than traditional risk control?</summary>Traditional risk control relies on manual review and historical data, which is slow and costly. NexusAI's AI risk control engine can analyze tens of thousands of on-chain transaction records in real time, using graph neural networks to identify hidden risk correlations—such as whether there are fraudulent wash trades between address A and address B, or whether a certain address frequently interacts with high-risk contracts. These signals are things that human auditors could never discover in massive amounts of data.</details>
+                <details><summary>Q3: Why soft cap $30M / hard cap $100M?</summary>$30 million is our "minimum economic scale" for launching our offline asset bridging business. Below this amount, we cannot establish effective partnerships with institutional borrowers—they need sufficient capital to cover their loan needs. $100 million is our capacity ceiling for the first phase; beyond this amount, our risk control model and offline asset verification capabilities will not be able to guarantee the same rate of return and security.</details>
+                <details><summary>Q4: When can I sell my tokens?</summary>NEX tokens were listed on decentralized exchanges (DEXs) immediately after fundraising, but only a small number of tokens were in circulation initially. A large portion of the tokens (including shares held by early investors) will be released linearly after six months or once the total value of tokens (TVL) reaches $30 million. This design protects all participants—no one can dump tokens in large quantities early in the project, giving the token price a more solid foundation.</details>
+                <details><summary>Q5: Why can't I trade now?</summary>Tokens issued during the private sale phase are early-stage, non-circulating assets locked by a smart contract. According to our dual-trigger unlocking mechanism, tokens will only begin to be released linearly after the TVL reaches $30 million or after 6 months. This is to prevent immediate sell-offs upon launch and protect the long-term interests of all early investors. All mainstream compliant DeFi projects (such as Aave and Maple) have similar locking arrangements in their early stages.</details>
+                <details><summary>Q6: What if NEX depreciates?</summary>All cryptocurrencies carry the risk of going to zero, including NEX. However, we operate a project with real revenue – each token is backed by offline loan interest. As long as the offline lending business continues to generate an annualized return of 8%-15%, the protocol has the capacity to buy back tokens. In the event of extreme market panic, we will activate an emergency stabilization fund (drawing 10% from the protocol's revenue) to provide a safety net. But please understand: there is no investment with 100% principal protection.</details>
+                <details><summary>Q7: Why are referral rewards as high as 60%?</summary>The 60% direct referral bonus isn't just "printing money out of thin air." Instead, it's a direct allocation of the budget that would normally go to centralized advertising platforms, KOLs, and exchange listing fees to community members. Traditional internet projects typically cost $30-50 per person to acquire a customer; we return this money to users as referral rewards. 60% may seem high, but you only receive a reward when your friends actually invest—it's a performance-based market model.</details>
+                <details><summary>Q8: Is this a ponzi scheme?</summary>The characteristics of a Ponzi scheme are: no real source of income, and the principal of later investors is used to pay interest to earlier investors. NexusAI has real offline lending assets—every loan has a loan agreement, collateral, and repayment source. The interest we pay to investors comes from the 8%-15% annualized interest rate paid by the borrowers, not from the investment funds of new users. You can view our regularly published asset reserve certificates and third-party audit reports.</details>
+                <details><summary>Q9: Why can't I find project information?</summary>Because we are still in the private placement stage, we haven't launched a large-scale media campaign yet. This is intentional—premature exposure would attract speculators and competitors, affecting the stability of the private placement price. We plan to focus our global media campaign, Cointelegraph coverage, and KOL collaborations in Q4 2026 (around TGE). Currently, information is mainly released on our official Telegram and Twitter accounts.</details>
+                <details><summary>Q10: Can I withdraw my investment early?</summary>Once the private placement is complete, USDT will be immediately converted into NEX tokens in the smart contract and locked. Early exit or redemption is not possible until the unlocking trigger conditions (TVL reaching $30 million or 6 months) are met. This is standard practice for all early-stage DeFi projects. If you require readily available liquidity, it is recommended to wait until the token is listed on the DEX before purchasing from the secondary market.</details>
+                <details><summary>Q11: Can I get my tokens earlier?</summary>No. Token release is executed automatically by a smart contract, and no one (including the team) can unlock them in advance. The contract code will be open source and subject to third-party auditing, which you can verify yourself. This is done for fairness—if the team could unlock tokens early for some people, it would be fraud against other investors.</details>
+                <details><summary>Q12: What if the team runs away?</summary>The smart contract's lock-up logic is open source, and multi-signature wallets require 3 out of 5 signatures (including a community representative); the legal costs and reputational damage from a scam far outweigh the potential gains. Of course, if you still don't trust it, you can wait until the project launches and the community matures before participating.</details>
+                <details><summary>Q13: Is there a signed contract?</summary>We do not provide traditional paper contracts because the trust foundation of DeFi is smart contract code. When you transfer USDT to the private placement address, the on-chain transaction record is your "contract." All terms (token quantity, lock-up rules, release time) are written in the smart contract, which is publicly verifiable and tamper-proof. If you require a legally binding investment agreement, we can provide an electronic subscription agreement, but please note that the cross-border legal effect of cryptocurrencies is limited.</details>
+                <details><summary>Q14: Is there an individual investment limit?</summary>There is no hard cap for individuals, but the entire private placement has a soft cap of $30 million and a hard cap of $100 million. The private placement will close early once the total amount raised reaches the hard cap. For investments exceeding $500,000 from a single address, we will conduct additional Anti-Money Laundering (AML) audits to ensure the legality of the funds' origin.</details>
+                <details><summary>Q15: Are there special benefits for investing over 3000U?</summary>Our pricing system is already standardized at $0.1 per NEX, with no additional discounts. However, Founding Directors with over 3000 USDT enjoy the highest level of referral rewards (four levels of indirect referrals) and community honors (exclusive NFTs, DAO governance weight, and direct communication with the team). These intangible values ​​far exceed the price discount of a few dollars.</details>
+            </div>
+        </div>
+    </section>
+
+    <section style="background: linear-gradient(135deg,#f0f4ff,white);">
+        <div class="container" style="text-align: center;">
+            <h2 class="gradient-text">Why Does NEX Have Huge Potential?</h2>
+            <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin: 32px 0;">
+                <div class="card clickable-card" data-modal="modal-potential1" style="width:200px;">Ondo (ONDO) Surges 9.16% on <br>RWA Pilot and Yield Product Launch</div>
+                <div class="card clickable-card" data-modal="modal-potential2" style="width:200px;">XRPL Foundation Pushes Public<br>Collaboration as AlphaPepe Turns Meme Culture Into AI DeFi</div>
+                <div class="card clickable-card" data-modal="modal-potential3" style="width:200px;">Wall Street Puts Blockchain to<br>Work in $13 Trillion Repo Market</div>
+                <div class="card clickable-card" data-modal="modal-potential4" style="width:200px;">Aave Leads DeFi for 3 Months with $7.5B<br>Flash Loan Volume – Is $300 Breakout Imminent?</div>
+            </div>
+            <a href="https://nexaira.com" target="_blank" class="btn-primary" style="padding: 14px 48px;">Join Private Sale Now</a>
+            <p style="margin-top: 32px; font-size:0.75rem;">Private placement tokens cannot be traded immediately; please treat this matter rationally.</p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+        <div><h4>NexusAI</h4><p>AI-driven hybrid asset decentralized lending protocol<br>Cayman Foundation + Singapore operating entity</p></div>
+        <div><h4>Official Channel</h4><p>Telegram: @n*****</p></div>
+        <div><p>© 2026 NexusAI — Building a new RWA ecosystem together</p></div>
+    </div>
+</footer>
+
+<!-- 技术弹窗 -->
+<div id="modal-tech1" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>AI Credit Engine</h3>
+      <span class="modal-close">&times;</span>
+    </div>
+    <div class="modal-body">
+      <img src="images/single/tech-ai.jpg" alt="AI Engine" onerror="this.style.display='none'">
+      <p><strong>Core Technology Details</strong></p>
+      <p><strong>1. Graph Neural Network (GNN) for On‑Chain Transaction Graph Analysis:</strong> The protocol employs Graph Convolutional Networks (GCN) or Graph Attention Networks (GAT) to model transaction graphs across Ethereum, BSC, and other major chains. It extracts subgraph structures, temporal flows, and fund path features. Combined with AML rules and unsupervised clustering, it identifies hidden risks such as mixers, dark‑net associations, and phishing addresses. Based on same‑frequency transactions and fund‑return patterns, it infers the strength of credit relationships between addresses, laying the foundation for on‑chain credit profiling.</p>
+      <p><strong>2. Zero‑Knowledge Proof (ZKP) for Off‑Chain Credit Records:</strong> Through ZK‑SNARKs or ZK‑STARKs, sensitive off‑chain information such as bank statements, tax data, and supply chain documents are transformed into verifiable credentials in a privacy‑preserving manner. The protocol only receives the proof, not the raw data, enabling on‑chain credit assessment while ensuring compliance. This mechanism can be combined with Decentralized Identity (DID) to form a composable off‑chain credit oracle.</p>
+      <p><strong>3. Dynamic Credit Scoring and Flexible Collateral Ratios:</strong> Based on on‑chain behavior (transaction history, liquidation risk) and off‑chain privacy credit data, the system uses LightGBM or federated learning models to output a real‑time credit score between 0 and 1000. The collateral ratio is dynamically set according to the score – high‑quality borrowers can enjoy 0% collateral (pure credit), or 10%‑50% low collateral, or even uncollateralized credit lending for specific whitelisted addresses. This model significantly lowers the capital barrier for DeFi, allowing real SME financing needs (such as inventory turnover, invoice discounting) to access on‑chain liquidity, and can hedge bad debt risks through Credit Default Swaps (CDS) or risk‑sharing pools.</p>
+    </div>
+  </div>
+</div>
+<div id="modal-tech2" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Hybrid Asset Model</h3>
+      <span class="modal-close">&times;</span>
+    </div>
+    <div class="modal-body">
+      <img src="images/single/hybrid-model.jpg" alt="Hybrid Model" onerror="this.style.display='none'">
+      <p><strong>Operation Mechanism & Profit Source</strong></p>
+      <p><strong>1. On‑chain AI Optimized Allocation (70% of funds):</strong> 70% of the raised funds are dynamically allocated by an AI yield optimizer to the highest‑yield lending pools in mainstream money markets such as Aave, Compound, and Euler. The AI algorithm considers real‑time deposit APY, pool utilization, historical volatility, protocol security scores (e.g., DeFi Safety index), and can perform arbitrage‑free rebalancing based on cross‑chain bridge fees and gas costs, pursuing the optimal risk‑adjusted base return (RAR).</p>
+      <p><strong>2. Off‑chain RWA Compliance Channel (30% of funds):</strong> The remaining 30% of funds go through a dedicated SPV (Special Purpose Vehicle) to complete KYC/AML and legal compliance processes, entering the tokenized real‑world asset (RWA) market, including SME secured loans, supply chain finance factoring, and accounts receivable notes. RWAs are mapped to ERC‑20 / ERC‑3643 (compliant tokens) through compliant oracles or asset tokenization protocols (such as Centrifuge, Goldfinch), enabling on‑chain tracking of repayment flows and collateral status.</p>
+      <p><strong>3. Spread and Value Capture:</strong> Off‑chain borrowers pay an annual interest rate of 8%‑15%, from which the protocol retains 2%‑7% as net spread income. Part of this income is used to buy back platform tokens NEX from the secondary market, forming a “real yield → buyback → token deflation / staking rewards” loop. The remaining income flows into the protocol treasury, used for reserve funds, insurance pools, or governance incentives. This model combines the high liquidity of DeFi with the high interest rate premium of traditional credit, building a sustainable on‑chain + off‑chain dual income source.</p>
+    </div>
+  </div>
+</div>
+<div id="modal-tech3" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>Dual-Trigger Unlock Mechanism</h3>
+      <span class="modal-close">&times;</span>
+    </div>
+    <div class="modal-body">
+      <img src="images/single/unlock-mech.jpg" alt="Unlock Mechanism" onerror="this.style.display='none'">
+      <p><strong>Innovative Design to Protect Investors' Interests</strong></p>
+      <p><strong>Pain Points of Traditional Unlocking:</strong> Most projects use pure time-based unlocking (e.g., unlocking every quarter after TGE), resulting in the team and investors holding a large number of low-cost linearly released tokens in the early stages of launch. This often creates continuous selling pressure before the product matures, causing price discovery distortion and damage to community confidence.</p>
+      <p><strong>NexusAI's Dual Trigger Conditions:</strong> Token unlocking does not rely on a single timeframe, but rather uses two trigger conditions: (1) TVL reaching $30 million (a business scaling metric) and (2) 6 months after TGE (a bottom‑line protection metric). The first of these two conditions to be met initiates the unlocking window. Once the unlocking window opens, tokens are released linearly over 12 months (evenly distributed daily or weekly), rather than in a one‑time unlock. This mechanism ensures that token release is strongly tied to actual adoption of the protocol (growth in total locked value), forcing the team to drive business growth before unlocking, rather than waiting for time to pass.</p>
+      <p><strong>Alignment of Interests and Price Support:</strong> The dual‑trigger unlocking mechanism aligns the team, early investors, and community on the same growth curve, preventing a flood of tokens into the market during periods of low TVL. Combined with subsequent buybacks and a treasury mechanism, this provides solid fundamental support for the NEX token, mitigating the risk of an immediate price drop or a sustained decline. This model can be further integrated with veToken governance or tiered staking to create a more stable token economy.</p>
+    </div>
+  </div>
+</div>
+
+<!-- 团队弹窗 -->
+<div id="modal-team1" class="modal"><div class="modal-content"><div class="modal-header"><h3>Tarun Chitra · Project Lead</h3><span class="modal-close">&times;</span></div><div class="modal-body"><img src="images/single/TarunChitra.jpg" alt="Tarun Chitra" onerror="this.style.display='none'"><p><strong>Education:</strong> M.S. in Computational Engineering, Stanford University; B.S. in Computer Engineering, University of Illinois at Urbana-Champaign.<br><strong>Experience:</strong> Former quantitative researcher at Pantera Capital, developing on-chain risk models for DeFi protocols; core contributor to the Compound Finance protocol, optimizing liquidation mechanisms; author of multiple academic papers on blockchain simulation and risk metrics.<br><strong>Role at NexusAI:</strong> Overall project strategy, design of AI credit scoring engine, and management of key technology partnerships.</p></div></div></div>
+<div id="modal-team2" class="modal"><div class="modal-content"><div class="modal-header"><h3>David Park · CTO</h3><span class="modal-close">&times;</span></div><div class="modal-body"><img src="images/single/DavidPark.jpg" alt="David Park" onerror="this.style.display='none'"><p><strong>Education:</strong> M.S. in Computer Science, University of Pennsylvania; B.S. in Computer Science, Carnegie Mellon University.<br><strong>Experience:</strong> Former senior engineer at Meta Novi Wallet, implementing a cross‑chain bridge for stablecoins; core developer of a Solana‑based lending protocol, where he designed an on‑chain liquidation bot that reduced bad debt by 90%.<br><strong>Role at NexusAI:</strong> Smart contract architecture, implementation of the dual‑trigger unlocking mechanism, and leadership of the technical team.</p></div></div></div>
+<div id="modal-team3" class="modal"><div class="modal-content"><div class="modal-header"><h3>Elena Vasiliev · COO</h3><span class="modal-close">&times;</span></div><div class="modal-body"><img src="images/single/ElenaVasiliev.jpg" alt="Elena Vasiliev" onerror="this.style.display='none'"><p><strong>Education:</strong> MBA, London Business School; B.A. in International Finance, Moscow State Institute of International Relations (MGIMO).<br><strong>Experience:</strong> Former institutional DeFi gateway designer at J.P. Morgan Onyx; business director for Europe at Binance, where she led the listing process for over 20 real‑world asset (RWA) projects.<br><strong>Role at NexusAI:</strong> Global business development, construction of compliance frameworks, and establishment of an offline asset partnership network.</p></div></div></div>
+
+<!-- 新闻弹窗（含完整外部链接） -->
+<div id="modal-news1" class="modal"><div class="modal-content"><div class="modal-header"><h3>Major Crypto Exchanges To Accept BlackRock’s $2.9 Billion Tokenized Money Market Fund As Collateral</h3><span class="modal-close">&times;</span></div><div class="modal-body"><img src="images/news/blackrock.jpg" alt="BlackRock news" onerror="this.style.display='none'"><p>Crypto.com and Deribit will now let savvy traders post Treasury securities-backed BUIDL tokens alongside bitcoin and stablecoins. For years, crypto traders posting collateral on exchanges have faced a tough tradeoff: use stablecoins like USDC or tether, which are stable but pay no yield, or roll the dice with volatile assets like bitcoin and ether, risking a double hit when markets turn south: losses on your trade and on the collateral backing it. This new development marks a major step for RWA integration into mainstream crypto infrastructure.</p><p><a href="https://www.forbes.com/sites/digital-assets/2025/06/18/major-crypto-exchanges-to-accept-blackrocks-29-billion-tokenized-money-market-fund-as-collateral/" target="_blank" style="color:#2563eb;">learn more →</a></p></div></div></div>
+<div id="modal-news2" class="modal"><div class="modal-content"><div class="modal-header"><h3>The $30B RWA boom has arrived, but the real challenge is just beginning!</h3><span class="modal-close">&times;</span></div><div class="modal-body"><img src="images/news/hk-rwa.jpg" alt="RWA news" onerror="this.style.display='none'"><p>Tokenized Real-World Assets (RWAs) are expanding into bonds, treasuries and other traditional assets being brought on-chain. Tokenised RWAs have crossed the $30 billion-mark, with the market very quickly expanding since 2025. This category was once mainly associated with stablecoins. Today, it’s spreading across treasuries, private credit, commodities, equities, funds, and other yield-bearing assets. The real challenge now is ensuring liquidity, pricing transparency, and seamless DeFi composability.</p><p><a href="https://ambcrypto.com/the-30b-rwa-boom-has-arrived-but-the-real-challenge-is-just-beginning/" target="_blank" style="color:#2563eb;">learn more →</a></p></div></div></div>
+<div id="modal-news3" class="modal"><div class="modal-content"><div class="modal-header"><h3>S&P500, stock basis trades now viable on Hyperliquid DeFi blockchain with Ondo</h3><span class="modal-close">&times;</span></div><div class="modal-body"><img src="images/news/erc8004.jpg" alt="Hyperliquid news" onerror="this.style.display='none'"><p>Ondo Global Markets is making its tokenized stocks available on Hyperliquid, the blockchain known for enabling 24/7 DeFi trading of perpetual futures linked to real world assets (RWAs), including oil. With both the tokenized stocks and the perpetual futures available on the same chain, traders can arbitrage the price difference between the two, a strategy known as a basis trade, which additionally helps keep Ondo GM's tokenized stocks anchored to the underlying stock prices.</p><p><a href="https://www.ledgerinsights.com/sp500-stock-basis-trades-now-viable-on-hyperliquid-defi-blockchain-with-ondo/" target="_blank" style="color:#2563eb;">learn more →</a></p></div></div></div>
+
+<!-- 潜力指标弹窗（含外部链接） -->
+<div id="modal-potential1" class="modal"><div class="modal-content"><div class="modal-header"><h3>Ondo (ONDO) Surges 9.16% on RWA Pilot and Yield Product Launch</h3><span class="modal-close">&times;</span></div><div class="modal-body"><p>A high profile pilot using Ondo's OUSG tokenized Treasuries with JPMorgan, Mastercard, and Ripple on the XRP Ledger has put Ondo at the center of the RWA narrative and continues to attract attention and flows. Community reports highlight a new tokenized preferred stock (STRC) on Ondo Global Markets with "instant yield" for eligible users, which boosts perceived utility and income potential for the Ondo ecosystem. Social and market data show strong RWA theme hype, ONDO leading alt rotations, spikes in CEX volume, whale inflows, and leveraged long "signals," all supporting short term price strength rather than a random move.</p><p><a href="https://coinmarketcap.com/top-stories/6a017fc42fbffb63cced8d2c/" target="_blank" style="color:#2563eb;">learn more →</a></p></div></div></div>
+<div id="modal-potential2" class="modal"><div class="modal-content"><div class="modal-header"><h3>XRPL Foundation Pushes Public Collaboration as AlphaPepe Turns Meme Culture Into AI DeFi</h3><span class="modal-close">&times;</span></div><div class="modal-body"><p>XRPL Foundation collaboration is putting community, infrastructure, and ecosystem openness back into the XRP Ledger conversation. Public collaboration matters because blockchains grow stronger when developers, institutions, and communities build together. For XRPL, that can support more tools, more assets, and more real-world usage over time. But collaboration is a long-term ecosystem story. AlphaPepe is building a faster retail narrative by turning meme culture into AI DeFi through AlphaSwap, its live AI-powered DEX. Stage 16 is active at $0.01666, the presale has crossed $1.15M+ raised, and more than 8,400 holders are already positioned before Q2 listing.</p><p><a href="https://www.openpr.com/news/4508025/xrpl-foundation-pushes-public-collaboration-as-alphapepe-turns" target="_blank" style="color:#2563eb;">learn more →</a></p></div></div></div>
+<div id="modal-potential3" class="modal"><div class="modal-content"><div class="modal-header"><h3>Wall Street Puts Blockchain to Work in $13 Trillion Repo Market</h3><span class="modal-close">&times;</span></div><div class="modal-body"><p>JPMorgan Chase & Co. spent hundreds of millions of dollars over the course of more than a decade developing systems using blockchain, a novel technology that was supposed to radically upend financial markets, but has yet to become a game-changer. In at least one area, though, the bank and the technology are beginning to make progress: repo. The nearly $13 trillion market is the vital plumbing that keeps money flowing. JPMorgan launched its blockchain-based financing product six years ago. Since then, it's handled around $3 trillion worth of repo transactions on the platform.</p><p><a href="https://www.bloomberg.com/news/features/2026-05-12/jpmorgan-wall-street-use-blockchain-in-13-trillion-repo-market" target="_blank" style="color:#2563eb;">learn more →</a></p></div></div></div>
+<div id="modal-potential4" class="modal"><div class="modal-content"><div class="modal-header"><h3>Aave Leads DeFi for 3 Months with $7.5B Flash Loan Volume – Is $300 Breakout Imminent?</h3><span class="modal-close">&times;</span></div><div class="modal-body"><p>Aave has dominated the decentralized finance sector for three consecutive months, processing over $7.5 billion in flash loan volume throughout 2025, and positioning the protocol as a category leader. The lending giant commands $24 billion of the total $110 billion secured across DeFi protocols, representing over 20% of the entire sector's total value locked. Aave delivered a 37.38% return over the past three months, significantly outperforming the modest gains of the broader DeFi sector.</p><p><a href="https://www.tradingview.com/news/cryptonews:ceddab307094b:0-aave-leads-defi-for-3-months-with-7-5b-flash-loan-volume-is-300-breakout-imminent/" target="_blank" style="color:#2563eb;">learn more →</a></p></div></div></div>
+
+<script>
+    const modals = document.querySelectorAll('.modal');
+    const closeBtns = document.querySelectorAll('.modal-close');
+    const clickableCards = document.querySelectorAll('.clickable-card');
+    const partnerLogos = document.querySelectorAll('.partner-logo');
+
+    function openModal(modalId) {
+        const modal = document.getElementById(modalId);
+        if (modal) modal.style.display = 'flex';
+    }
+    function closeAllModals() {
+        modals.forEach(m => m.style.display = 'none');
+    }
+    clickableCards.forEach(card => {
+        card.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const modalId = card.getAttribute('data-modal');
+            if (modalId) openModal(modalId);
+        });
+    });
+    closeBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            closeAllModals();
+        });
+    });
+    window.addEventListener('click', (e) => {
+        if (e.target.classList.contains('modal')) {
+            closeAllModals();
+        }
+    });
+    partnerLogos.forEach(logo => {
+        logo.addEventListener('click', () => {
+            const url = logo.getAttribute('data-url');
+            if (url) window.open(url, '_blank');
+        });
+    });
+    function runSimulation() {
+        let invest = parseFloat(document.getElementById('simInvest')?.value) || 0;
+        let refs = parseInt(document.getElementById('simRefs')?.value) || 0;
+        let directRate = (invest>=20 && invest<=99) ? 0.4 : (invest>=100 ? 0.6 : 0);
+        let directUsdt = refs * 200 * directRate;
+        let selfNex = invest / 0.1;
+        let extra = 0;
+        if(invest>=100 && invest<=299) extra=0.05;
+        else if(invest>=300 && invest<=999) extra=0.1;
+        else if(invest>=1000 && invest<=2999) extra=0.2;
+        else if(invest>=3000) extra=0.3;
+        let totalNex = selfNex * (1+extra);
+        let refBonus = 0;
+        if(invest>=100) refBonus = refs * (200/0.1) * 0.10;
+        totalNex += refBonus;
+        const simResult = document.getElementById('simResult');
+        if (simResult) simResult.innerHTML = `📊 Simulation Result: You get immediate USDT reward <strong>${directUsdt.toFixed(2)} USDT</strong>, total locked NEX <strong>${totalNex.toFixed(0)} NEX</strong> (including bonus + referral token rewards). Unlock condition: TVL ≥ $30M or 6 months, then linear release.`;
+    }
+    if (document.getElementById('simInvest')) runSimulation();
+
+    const faqToggleBtn = document.getElementById('faqToggleBtn');
+    const faqContent = document.getElementById('faqContent');
+    if (faqToggleBtn && faqContent) {
+        faqToggleBtn.addEventListener('click', () => {
+            faqContent.classList.toggle('show');
+            const icon = faqToggleBtn.querySelector('.fa-chevron-down');
+            if (icon) {
+                if (faqContent.classList.contains('show')) {
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    icon.style.transform = 'rotate(0deg)';
+                }
+            }
+        });
+    }
+</script>
+</body>
+</html>
